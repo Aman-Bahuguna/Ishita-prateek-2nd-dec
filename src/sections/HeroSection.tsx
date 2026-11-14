@@ -257,7 +257,10 @@ export function HeroSection() {
           </a>
         </div>
 
-        <div className={`envelope-preloader ${isOpen ? "is-opening" : ""}`}>
+        <div
+          className={`envelope-preloader ${isOpen ? "is-opening" : ""}`}
+          onClick={openEnvelope}
+        >
           <div className="fullscreen-envelope" aria-label="Open the envelope">
             <div className="envelope-underlay" aria-hidden="true" />
             <div className="envelope-light" aria-hidden="true">
@@ -305,6 +308,9 @@ export function HeroSection() {
                 disabled={isOpen}
                 aria-label="Open the wedding invitation"
               >
+                <span className="seal-cue" aria-hidden="true">
+                  Tap Here!
+                </span>
                 <img src={`${ASSET_ROOT}/envelope-stamp.png`} alt="" />
               </button>
             </div>

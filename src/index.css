@@ -321,14 +321,14 @@
   align-items: center;
   gap: 8px;
   padding: 9px 15px 10px;
-  border: 1px solid rgb(229 197 124 / 0.38);
+  border: 1px solid rgb(229 197 124 / 0.65);
   border-radius: 999px;
-  background: rgb(83 18 38 / 0.26);
+  background: rgb(75 16 34 / 0.82);
   box-shadow:
-    0 5px 16px rgb(50 15 22 / 0.14),
-    inset 0 1px 0 rgb(255 247 224 / 0.1);
+    0 6px 20px rgb(40 8 16 / 0.35),
+    inset 0 1px 0 rgb(255 247 224 / 0.25);
   color: #fff4d5;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(6px);
   font-family: "Cormorant Garamond", serif;
   font-size: 0.76rem;
   font-weight: 600;
@@ -375,6 +375,7 @@
   z-index: 10;
   overflow: hidden;
   pointer-events: auto;
+  cursor: pointer;
   transition: visibility 0s linear 7500ms;
 }
 
@@ -2542,6 +2543,28 @@
   user-select: none;
 }
 
+.seal-cue {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  color: #861c31;
+  -webkit-text-fill-color: #861c31;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(0.95rem, 3.8vw, 1.25rem);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  white-space: nowrap;
+  text-shadow:
+    0 1px 0 rgb(255 255 255 / 0.95),
+    0 2px 8px rgb(90 20 30 / 0.2);
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 250ms ease;
+}
+
 .is-opening .envelope-light {
   animation: softEnvelopeFlash 2400ms cubic-bezier(0.2, 0.72, 0.18, 1) 540ms both;
 }
@@ -2553,6 +2576,10 @@
 }
 
 .is-opening .seal-button {
+  opacity: 0;
+}
+
+.is-opening .seal-cue {
   opacity: 0;
 }
 
