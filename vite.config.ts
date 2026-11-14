@@ -1,3 +1,4 @@
+
 import { defineConfig, type HtmlTagDescriptor, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
@@ -8,6 +9,7 @@ import siteConfiguration from "./.figma/make/site.json";
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+
   // .figma/make/deploy-preview passes `--mode development` for cached-preview builds.
   const emitSourcemaps = mode === "development";
 
@@ -457,7 +459,7 @@ function figmaLinkedPackageSourcemaps(): Plugin {
         const mapFile = path.resolve(path.dirname(file), url);
         return { map: JSON.parse(fs.readFileSync(mapFile, "utf8")), mapDir: path.dirname(mapFile) };
       }
-    } catch {}
+    } catch { }
     // Without a usable input map, map every line to itself.
     const mappings = code.split("\n").map((_, i) => (i ? "AACA" : "AAAA"));
     const map = {
