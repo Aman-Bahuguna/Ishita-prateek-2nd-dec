@@ -222,7 +222,6 @@ export function FestivitiesTimelineSection() {
 
       <div className="festivities-content">
         <header className="festivities-header">
-          <p className="festivities-eyebrow">Join us for the</p>
           <h2 id="festivities-title" className="festivities-title">
             Festivities Timeline
           </h2>
